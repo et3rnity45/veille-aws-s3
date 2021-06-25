@@ -1,5 +1,7 @@
 import aws from 'aws-sdk';
+import { config } from 'dotenv';
 
+config();
 const s3 = new aws.S3({
   credentials: {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID as string,
