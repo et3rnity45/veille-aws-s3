@@ -14,7 +14,6 @@ export const uploadFile = async (file: FileUpload): Promise<string> => {
   return new Promise<string>((res) => {
     s3.upload(params, (err, data) => {
       if (err) {
-        console.log(process.env.AWS_ACCESS_KEY_ID as string);
         throw new Error(err.message);
       }
       res(data.Key);
